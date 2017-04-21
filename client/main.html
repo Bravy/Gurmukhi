@@ -1,0 +1,15 @@
+<head>
+  <title></title>
+</head>
+
+<body>
+  {{> box}}
+</body>
+
+<template name="box">
+  <input type="text" class="inputBox"/>
+  <button class="translate" > Search </button>
+  <p class="meaning"> {{#each meaning }}
+  {{word}} : {{ english_meaning }}
+{{/each}}</p>
+</template>
