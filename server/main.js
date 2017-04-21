@@ -7,10 +7,13 @@ Meteor.startup(() => {
     prettyJson: true
   });
   Api.addCollection(Gurmukhi);
-  Api.addRoute('api/hnji/:text',{
+  Api.addRoute('hnji/:text',{
     get: function () {
       var txt = this.urlParams.text; //
-      return Gurmukhi.find({"word" :txt});
+      return {
+          status: 'success',
+          data:Gurmukhi.find({"word" :txt}).fetch()
+      }
     }
   });
 });
